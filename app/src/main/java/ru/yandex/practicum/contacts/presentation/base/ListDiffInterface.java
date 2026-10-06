@@ -4,5 +4,5 @@ public interface ListDiffInterface<T> {
 
     boolean theSameAs(T newItem);
 
-    boolean equals(Object o);
+    boolean matches(T other);
 }

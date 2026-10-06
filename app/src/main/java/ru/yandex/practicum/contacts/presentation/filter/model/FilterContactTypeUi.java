@@ -27,6 +27,16 @@ public class FilterContactTypeUi implements ListDiffInterface<FilterContactTypeU
         return this.getContactType() == newItem.getContactType();
     }
 
+
+    @Override
+    public boolean matches(FilterContactTypeUi other) {
+        if (this == other) return true;
+        if (other == null || getClass() != other.getClass()) return false;
+
+        if (selected != other.selected) return false;
+        return contactType == other.contactType;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

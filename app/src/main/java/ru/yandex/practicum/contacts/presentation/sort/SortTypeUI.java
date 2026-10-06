@@ -28,6 +28,16 @@ public class SortTypeUI implements ListDiffInterface<SortTypeUI> {
         return this.getSortType() == newItem.getSortType();
     }
 
+
+    @Override
+    public boolean matches(SortTypeUI other) {
+        if (this == other) return true;
+        if (other == null || getClass() != other.getClass()) return false;
+
+        if (selected != other.selected) return false;
+        return sortType == other.sortType;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
